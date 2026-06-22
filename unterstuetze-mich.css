@@ -1,0 +1,172 @@
+/* ══════════════ HERO (Mael-Style Einzug) ══════════════ */
+.erfolge-hero {
+    height: 100vh;
+    background: linear-gradient(135deg, #c5e5f4 0%, #b0d8ef 50%, #d4ecf7 100%);
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    position: relative; 
+    overflow: hidden;
+}
+
+.erfolge-hero-bg {
+    position: absolute; inset: 0;
+    background: url('assets/background-blau-weiss-weich.jpg') center/cover no-repeat;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+.erfolge-hero-content {
+    padding: 0 8vw 0 16vw; /* Der weite Einzug links */
+    position: relative;
+    z-index: 2;
+}
+
+.erfolge-eyebrow {
+    font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: #5d93b1; display: block; margin-bottom: 16px;
+}
+
+.erfolge-hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(4rem, 9vw, 8rem);
+    line-height: 0.9; color: #1a2b3c; letter-spacing: -0.01em;
+}
+
+.erfolge-hero-title em {
+    font-size: clamp(4rem, 9vw, 8rem); color: #3498db;
+    display: block; line-height: 0.85; font-style: italic;
+}
+
+.erfolge-hero-sub { font-size: 1.1rem; color: #555; margin-top: 16px; font-weight: 300; letter-spacing: 0.05em; }
+
+/* ══════════════ CONTENT LAYOUT ══════════════ */
+.support-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 8vw;
+}
+
+.support-intro {
+    padding: 120px 0 60px;
+}
+
+.support-section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: #1a2b3c;
+    margin-bottom: 30px;
+}
+
+.support-text-block p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #444;
+    max-width: 700px;
+}
+
+/* ══════════════ MEILENSTEIN CARDS ══════════════ */
+.sponsoring-grid-section {
+    padding: 60px 0;
+}
+
+.ms-header {
+    margin-bottom: 40px;
+}
+
+.ms-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: #1a2b3c;
+}
+
+.ms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.ms-card {
+    background: #fff;
+    border-radius: 2px 16px 2px 16px;
+    overflow: hidden;
+    border: 1px solid rgba(107,166,196,0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.ms-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(30,95,138,0.1);
+}
+
+.ms-card-img {
+    position: relative;
+    aspect-ratio: 1 / 1; /* Erzwingt quadratische Form für alle */
+    overflow: hidden;
+}
+
+.ms-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center; /* Standard: Mitte */
+    display: block;
+}
+
+/* FIX FÜR DIE MITTLERE BOX (Helm/Mütze) */
+/* Wir nehmen das zweite ms-card Element im Grid */
+.ms-grid .ms-card:nth-child(2) .ms-card-img img {
+    object-position: top center; /* Zeigt nur den oberen Bereich des Bildes */
+}
+
+.ms-card-rank {
+    position: absolute; top: 15px; left: 15px;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.4);
+    padding: 6px 12px;
+    border-radius: 8px;
+    z-index: 2;
+}
+
+.ms-rank-num {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #fff; font-size: 1.1rem; letter-spacing: 0.05em;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.ms-card-body {
+    padding: 25px;
+}
+
+.ms-card-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem; color: #1a2b3c; margin-bottom: 10px; display: block;
+}
+
+.ms-card-body p {
+    font-size: 0.95rem; color: #666; line-height: 1.5;
+}
+
+/* ══════════════ CTA & FOOTER ABSTAND ══════════════ */
+.support-cta-area {
+    margin-top: 80px;
+    padding: 80px 0 150px; /* Viel Abstand zum Footer */
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.support-cta-area p {
+    margin-bottom: 30px;
+    font-style: italic;
+    color: #888;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .erfolge-hero-content { padding: 0 8vw; }
+    .support-cta-area { padding-bottom: 80px; }
+}

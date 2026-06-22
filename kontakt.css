@@ -1,0 +1,106 @@
+.kontakt-page {
+    padding: 20% 0 100px;
+    min-height: 80vh;
+}
+
+.kontakt-container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 0 5vw;
+}
+
+.kontakt-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.kontakt-title {
+    font-size: 4rem;
+    font-family: var(--font-display);
+    color: var(--blue-dark);
+    margin-bottom: 20px;
+}
+
+.info-block {
+    margin-top: 40px;
+}
+
+.info-block h4 {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    color: var(--text-muted);
+}
+
+.kontakt-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: #f4f8fb;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+}
+
+@media (max-width: 768px) {
+    .kontakt-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+
+/* ── Styling für die direkten Kontakt-Links ── */
+
+.contact-links-styled {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.contact-item {
+    text-decoration: none; /* Entfernt das Standard-Underline */
+    color: var(--blue-dark, #1a2b3c); /* Deine Hauptfarbe */
+    font-size: 1.1rem;
+    font-weight: 400;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease; /* Weicher Übergang für Hover */
+    width: fit-content;
+    position: relative; /* Für die eigene Unterstreichung */
+}
+
+/* Der "Klick-Indikator": Eine edle Linie, die beim Hover erscheint */
+.contact-item::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--blue, #3498db); /* Hellere Akzentfarbe */
+    transition: width 0.3s ease;
+}
+
+/* Hover-Effekt */
+.contact-item:hover {
+    color: var(--blue, #3498db); /* Text wird leicht heller beim Hover */
+    transform: translateX(5px); /* Ganz dezentes Verschieben nach rechts */
+}
+
+.contact-item:hover::after {
+    width: 100%; /* Linie zieht sich unter den Text */
+}
+
