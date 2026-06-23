@@ -1,6 +1,12 @@
 /* ═══════════════════════════════════════════════
    BASE RESET & VARIABLES
 ═══════════════════════════════════════════════ */
+link[rel="icon"] {
+  image-rendering: auto;
+}
+
+
+
 :root {
     --blue:        #6ba6c4;
     --blue-dark:   #1e5f8a;
@@ -633,13 +639,13 @@ header.scrolled nav ul { margin-top: 0; }
 
     /* ── HERO ── */
     .hero-flexer {
-        padding: 0 5vw 0 7vw;
+        padding: 0 5vw 0 10vw;
         gap: 0;
         align-items: flex-end;
     }
 
     .hero-text {
-        padding-bottom: 18vh;
+        padding-bottom: 24vh;
         flex: 1;
     }
 
@@ -651,10 +657,12 @@ header.scrolled nav ul { margin-top: 0; }
     }
 
     .hero-img {
-        height: 80%;
+        height: 50%;
         width: auto;
         margin-bottom: -1px;
         flex-shrink: 0;
+        margin-left: -15rem;
+        margin-right: -10rem;
     }
 
     /* ── ÜBER MICH ── */
@@ -719,7 +727,9 @@ header.scrolled nav ul { margin-top: 0; }
     }
 
     .tl-item--left .tl-node,
-    .tl-item--right .tl-node  { grid-column: 1; grid-row: 1; }
+    .tl-item--right .tl-node  { grid-column: 1; grid-row: 1;
+    left: -28px; 
+top: -20px;}
 
     .tl-item--left .tl-year-wrap,
     .tl-item--right .tl-year-wrap {

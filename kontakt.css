@@ -59,6 +59,8 @@
 
 @media (max-width: 768px) {
     .kontakt-grid { grid-template-columns: 1fr; gap: 40px; }
+    .kontakt-page { margin-top: 200px;}
+    .kontakt-form {margin-top: 100px;}
 }
 
 

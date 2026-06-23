@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Pathway+Gothic+One&family=Estonia&family=Galada&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 <body class="page-news">
 
@@ -36,9 +37,8 @@
     <section class="news-hero">
         <div class="news-hero-bg"></div>
         <div class="news-hero-content">
-            <span class="news-eyebrow">Einblicke & Updates</span>
+            <span class="hero-eyebrow">Einblicke & Updates</span>
             <h1 class="news-hero-title">News &<br><em>Galerie</em></h1>
-            <p class="news-hero-sub">Aktuelle Berichte und Impressionen von der Schanze und Loipe.</p>
         </div>
     </section>
 
@@ -81,79 +81,116 @@
             </div>
             
             <div class="gallery-grid">
-                <div class="gallery-item"><img src="assets/bild1.jpeg" alt="Training"></div>
-                <div class="gallery-item tall"><img src="assets/bild2.jpeg" alt="Wettkampf"></div>
-                <div class="gallery-item"><img src="assets/bild3.jpeg" alt="Schanze"></div>
-                <div class="gallery-item wide"><img src="assets/bild4.jpeg" alt="Team"></div>
-                <div class="gallery-item"><img src="assets/bild5.jpeg" alt="Vorbereitung"></div>
-                <div class="gallery-item"><img src="assets/bild6.jpeg" alt="Erfolg"></div>
-                <div class="gallery-item tall"><img src="assets/bild7.jpeg" alt="Loipe"></div>
-                <div class="gallery-item"><img src="assets/bild8.jpeg" alt="Impression"></div>
+                <div class="gallery-item" onclick="openLightbox(0)"><img src="assets/bild1.jpeg" alt="Training"></div>
+                <div class="gallery-item tall" onclick="openLightbox(1)"><img src="assets/bild2.jpeg" alt="Wettkampf"></div>
+                <div class="gallery-item" onclick="openLightbox(2)"><img src="assets/bild3.jpeg" alt="Schanze"></div>
+                <div class="gallery-item wide" onclick="openLightbox(3)"><img src="assets/bild4.jpeg" alt="Team"></div>
+                <div class="gallery-item" onclick="openLightbox(4)"><img src="assets/bild5.jpeg" alt="Vorbereitung"></div>
+                <div class="gallery-item" onclick="openLightbox(5)"><img src="assets/bild6.jpeg" alt="Erfolg"></div>
+                <div class="gallery-item tall" onclick="openLightbox(6)"><img src="assets/bild7.jpeg" alt="Loipe"></div>
+                <div class="gallery-item" onclick="openLightbox(7)"><img src="assets/bild8.jpeg" alt="Impression"></div>
+                <div class="gallery-item" onclick="openLightbox(8)"><img src="assets/bild9.jpeg" alt="Impression"></div>
             </div>
         </div>
     </section>
 
+    <!-- ══════════════ LIGHTBOX ══════════════ -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+        <button class="lightbox-prev" onclick="event.stopPropagation(); changeImage(-1)">&#8249;</button>
+        <button class="lightbox-next" onclick="event.stopPropagation(); changeImage(1)">&#8250;</button>
+        <img class="lightbox-img" id="lightbox-img" src="" alt="" onclick="event.stopPropagation()">
+    </div>
+
+    <!-- ══════════════ FOOTER ══════════════ -->
     <footer class="site-footer">
         <div class="footer-glow"></div>
+
         <div class="footer-inner">
             <div class="footer-brand">
                 <img src="assets/logo_mael-niedhart.webp" alt="Mael Niedhart" class="footer-logo">
-                <p class="footer-tagline">Aus Kandersteg<br><em>in die Welt.</em></p>
+                <p class="footer-tagline">
+                    Nordische Kombination<br>
+                    <span>NLZ Equipe West</span>
+                </p>
             </div>
-            <div class="footer-divider"></div>
-            <div class="footer-cols">
-                <div class="footer-col">
-                    <div class="footer-col-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
-                            <circle cx="12" cy="9" r="2.5"/>
-                        </svg>
-                    </div>
-                    <h4>Adresse</h4>
-                    <address>Bahnhofstrasse 6<br>3718 Kandersteg</address>
+
+            <div class="footer-content">
+                <div class="footer-info-group">
+                    <span class="info-label">Standort</span>
+                    <address>
+                        Bahnhofstrasse 6<br>
+                        3718 Kandersteg
+                    </address>
                 </div>
 
-                <div class="footer-col">
-                    <div class="footer-col-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.02 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
-                        </svg>
-                    </div>
-                    <h4>Kontakt</h4>
+                <div class="footer-info-group">
+                    <span class="info-label">Kontakt</span>
                     <p>
-                        <a href="tel:+41799663288">+41 79 966 32 88</a>
                         <a href="mailto:mael.niedhart@bluewin.ch">mael.niedhart@bluewin.ch</a>
+                        <a href="tel:+41799663288">+41 79 966 32 88</a>
                     </p>
                 </div>
 
-                <div class="footer-col">
-                    <div class="footer-col-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M17 2H7a5 5 0 00-5 5v10a5 5 0 005 5h10a5 5 0 005-5V7a5 5 0 00-5-5z"/>
-                            <circle cx="12" cy="12" r="3"/>
-                            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <h4>Soziale Medien</h4>
-                    <div class="footer-socials">
-                        <a href="#" class="footer-social-btn" aria-label="Instagram">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M17 2H7a5 5 0 00-5 5v10a5 5 0 005 5h10a5 5 0 005-5V7a5 5 0 00-5-5z"/>
-                                <circle cx="12" cy="12" r="3"/>
-                                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
-                            </svg>
-                        </a>
-                    </div>
+                <div class="footer-info-group">
+                    <span class="info-label">Rechtliches</span>
+                    <p>
+                        <a href="assets/impressum.pdf" target="_blank" download>Impressum</a>
+                        <a href="assets/datenschutz.pdf" target="_blank" download>Datenschutz</a>
+                    </p>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <span>© 2025 Mael Niedhart</span>
-            <span class="footer-sep">·</span>
-            <span>Nordische Kombination · Schweiz</span>
+
+        <div class="footer-copyright">
+            <div class="footer-copyright-inner">
+                © 2025 Mael Niedhart
+            </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        const images = [
+            'assets/bild1.jpeg',
+            'assets/bild2.jpeg',
+            'assets/bild3.jpeg',
+            'assets/bild4.jpeg',
+            'assets/bild5.jpeg',
+            'assets/bild6.jpeg',
+            'assets/bild7.jpeg',
+            'assets/bild8.jpeg',
+            'assets/bild9.jpeg',
+        ];
+        let current = 0;
+
+        function openLightbox(index) {
+            current = index;
+            document.getElementById('lightbox-img').src = images[current];
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function changeImage(dir) {
+            current = (current + dir + images.length) % images.length;
+            const img = document.getElementById('lightbox-img');
+            img.style.opacity = '0';
+            setTimeout(() => {
+                img.src = images[current];
+                img.style.opacity = '1';
+            }, 150);
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') changeImage(1);
+            if (e.key === 'ArrowLeft') changeImage(-1);
+        });
+    </script>
 </body>
 </html>
